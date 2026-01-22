@@ -1,0 +1,37 @@
+- !<NativePackageDescriptor/bd96f9e5-a9d7-44cc-be5a-7d7ccf98a539>
+  PackagePath: ""
+  StudioVersion:
+    major: 5
+    minor: 17
+    patch: 2
+    build: 26011319
+    type: Unset
+    buildFlavor: ""
+    timestamp: 0
+    commit: ""
+  Description: "10 Animal Material Pack This pack contains 10 materials with animal prints: Snake Dragon Tiger Giraffe Zebra Cow Fawn Cat Lizard Bear. It's also possible to adapt the materials to your own meshes and play around with blend modes."
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  VersionMajor: 1
+  VersionMinor: 0
+  VersionPatch: 0
+  UpdateCheckpoint: 83
+  ExportUid: 80cdcb2b-5d51-4ca8-b495-0e3c9a9bc9cf
+  ComponentUid: 25973579-2cc1-46b0-9f3a-bed97cb10ae4
+  PackagePolicy: CanBeUnpackedTransparent
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  Instantiable: !<reference> 00000000-0000-0000-0000-000000000000
+  AssetLibraryDependencyStructure: !<AssetLibraryDependencyStructure>
+    Name: ""
+    AssetId: ""
+    Hash: ""
+    Version:
+      major: 0
+      minor: 0
+      patch: 0
+      build: 0

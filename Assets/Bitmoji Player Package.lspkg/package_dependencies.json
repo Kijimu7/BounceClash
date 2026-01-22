@@ -1,0 +1,39 @@
+{
+    "dependencies": [
+        {
+            "assetId": "77pMkoqQPt5MSnQYdckogW",
+            "exportId": "c8927f21-d4ef-4fa7-83a1-547996120ae9",
+            "id": "0005e0cc-4592-ac28-0000-000000067b6a",
+            "name": "Bitmoji 3D",
+            "version": "9.0.0"
+        },
+        {
+            "assetId": "6mrMRE3IgiotqB1VGERFAQ",
+            "exportId": "04f60ce1-46aa-4495-aa59-3395e8b57435",
+            "id": "1e423696-ab63-4131-aa02-080e6d760a5b",
+            "name": "Joystick",
+            "version": "2.0.1"
+        },
+        {
+            "assetId": "4I7SbGYVfxYByKQm3Dh8M6",
+            "exportId": "0eab616a-887e-440d-a0cd-a15298b6aa74",
+            "id": "3bb090c6-da3a-4fdd-90b1-7f5beff1848d",
+            "name": "Camera Controller",
+            "version": "2.1.1"
+        },
+        {
+            "assetId": "4vfl32KxtuakC3JCuwiTg0",
+            "exportId": "129884c1-c4dc-4e0d-bebf-4500c61f6c88",
+            "id": "d434d0c6-1525-4f3f-a279-adc6dbd7c20e",
+            "name": "Character Controller",
+            "version": "1.2.0"
+        },
+        {
+            "assetId": "3xTusILuBnQeZVL8YlA9Cs",
+            "exportId": "7a843bda-6b08-43e4-8bae-ad66b07db1b7",
+            "id": "f3b65973-71b1-41c9-b4f6-18bd0b85207a",
+            "name": "Input Action",
+            "version": "1.2.0"
+        }
+    ]
+}
