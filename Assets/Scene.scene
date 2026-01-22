@@ -9,7 +9,10 @@
     - !<own> 2a5c802e-baaa-4abd-9698-da2b6efa506c
     - !<own> 248f2493-6f3f-41b2-9a93-968af80d9fca
     - !<own> beb7ccd9-77a2-4598-b425-8a1ac32f3171
-    - !<own> 2280d316-063a-4245-923f-c6f10cc5c0a2
+    - !<own> da27d8b6-ce02-461a-a329-9848ed444928
+    - !<own> 0d47e36c-7d22-47db-9071-9a31ce4de861
+    - !<own> 2ab8f963-4fd2-4ea9-8c45-66faa3faf908
+    - !<own> 1eff1548-9b7c-4a30-afbe-51cf4c84b121
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -315,6 +318,22 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/0d47e36c-7d22-47db-9071-9a31ce4de861>
+  PrefabRemaps:
+    []
+  Name: NPC_Root 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> c3425233-a185-4fdc-930b-cc3d9266321b
+    - !<own> a97b8ddb-038d-4099-b1d3-0c817830722d
+  Components:
+    []
 - !<SceneObject/0f37e33f-88a5-4b89-ba58-275ff0b5868f>
   PrefabRemaps:
     []
@@ -373,6 +392,36 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/1c8716c7-4a23-4255-99db-11cb78f37601>
+  PrefabRemaps:
+    []
+  Name: model
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.089776, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000023, y: -0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 833aa6f6-e75e-48c5-9e13-5a9877c10c96
+- !<SceneObject/1eff1548-9b7c-4a30-afbe-51cf4c84b121>
+  PrefabRemaps:
+    []
+  Name: NPC_Spawner
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 779ea0ea-5fb5-4e77-8654-2225fe84358d
 - !<ScriptComponent/2043b1b4-9d1a-4716-bdae-e9ff613f04f7>
   PrefabRemaps:
     []
@@ -507,15 +556,14 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 363.003052, y: 106.948318, z: -165.834686}
+    Position: {x: 363.003052, y: 106.948318, z: -165.834671}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 100.000000, y: 100.000000, z: 100.000000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 97801e09-59af-4e5a-8bff-6fea42becac7
-    - !<own> 25da596f-99d6-4fc6-af5f-f7d60f1bef1c
   Components:
-    []
+    - !<own> cf611c98-b3c1-449b-97d0-673e32dc817e
 - !<SceneObject/248f2493-6f3f-41b2-9a93-968af80d9fca>
   PrefabRemaps:
     - 2043b1b4-9d1a-4716-bdae-e9ff613f04f7: 386150c0-bc1f-45b8-4d85-862e9adc6a5f
@@ -559,20 +607,20 @@
 - !<SceneObject/25da596f-99d6-4fc6-af5f-f7d60f1bef1c>
   PrefabRemaps:
     []
-  Name: NPC
+  Name: NPCball
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -0.922515, z: -0.000000}
+    Position: {x: 363.003052, y: 14.696823, z: -165.834686}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 100.000000, y: 100.000000, z: 100.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
   Components:
     - !<own> 52c8eaa9-6554-4217-a774-2b57532da30d
     - !<own> 2fe501c2-12df-48c7-a356-b287eb45c9db
-    - !<own> 7ce1c1e6-f758-40e1-9e05-8f76f8bfd6c2
+    - !<own> 817352f9-3201-42d0-b114-0f786664ed3b
 - !<SceneObject/29779847-9175-4b72-94bc-0620301eab06>
   PrefabRemaps:
     []
@@ -606,6 +654,21 @@
   Components:
     - !<own> d5b5111d-ca7d-4084-bd9e-29c884dbdbc4
     - !<own> c9b87bee-e948-4228-bc0d-2d91af839583
+- !<SceneObject/2ab8f963-4fd2-4ea9-8c45-66faa3faf908>
+  PrefabRemaps:
+    []
+  Name: AreaCenter
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 15.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    []
 - !<Image/2edf80bc-3056-48c0-aadb-3d9f71419806>
   PrefabRemaps:
     []
@@ -721,6 +784,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/43879f96-3eca-48c7-b44f-6b7b88934ba3>
+  PrefabRemaps:
+    []
+  Name: Scenes
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 7872eaab-9d00-4dbc-8e2d-e602bf42998e
+  Components:
+    []
 - !<RenderMeshVisual/52c8eaa9-6554-4217-a774-2b57532da30d>
   PrefabRemaps:
     []
@@ -1078,14 +1156,76 @@
     - !<own> 9c5f74ec-3d13-4379-98cc-2091c1741b3c
   Components:
     []
-- !<ScriptComponent/7ce1c1e6-f758-40e1-9e05-8f76f8bfd6c2>
+- !<ScriptComponent/779ea0ea-5fb5-4e77-8654-2225fe84358d>
+  PrefabRemaps:
+    []
+  Name: NpcSpawner.js
+  Enabled: true
+  ScriptAsset: !<reference> c7282ee1-2b12-443c-a3af-7d983dd7dc41
+  ScriptInputsDefault:
+    npcCount: true
+    areaWidth: true
+    areaDepth: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      npcTemplates: !<reference.SceneObject[]>
+        - !<reference> da27d8b6-ce02-461a-a329-9848ed444928
+        - !<reference> 0d47e36c-7d22-47db-9071-9a31ce4de861
+      npcCount: 3
+      areaCenter: !<reference.SceneObject> 2ab8f963-4fd2-4ea9-8c45-66faa3faf908
+      areaWidth: !<float> 400.000000
+      areaDepth: !<float> 400.000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/7872eaab-9d00-4dbc-8e2d-e602bf42998e>
+  PrefabRemaps:
+    []
+  Name: Scene
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 1c8716c7-4a23-4255-99db-11cb78f37601
+  Components:
+    []
+- !<ScriptComponent/7a898af9-d4e0-4261-9210-e4eb73325253>
   PrefabRemaps:
     []
   Name: GameController
   Enabled: true
   ScriptAsset: !<reference> 52d87ee9-7c04-43e6-94e8-1050555f133d
   ScriptInputsDefault:
-    fallY: true
+    speed: true
+    fallSpeed: true
+    fallThreshold: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      sphere: !<reference.SceneObject> c3425233-a185-4fdc-930b-cc3d9266321b
+      player: !<reference.SceneObject> c19a8c5c-b7b3-4c50-b57e-b4b055940a07
+      speed: !<float> 50.000000
+      fallSpeed: !<float> 300.000000
+      fallThreshold: 0.100000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/817352f9-3201-42d0-b114-0f786664ed3b>
+  PrefabRemaps:
+    []
+  Name: GameController
+  Enabled: true
+  ScriptAsset: !<reference> 52d87ee9-7c04-43e6-94e8-1050555f133d
+  ScriptInputsDefault:
+    speed: true
+    fallSpeed: true
     fallThreshold: true
   ScriptTypesDefault:
     {}
@@ -1093,9 +1233,8 @@
     "":
       sphere: !<reference.SceneObject> 25da596f-99d6-4fc6-af5f-f7d60f1bef1c
       player: !<reference.SceneObject> c19a8c5c-b7b3-4c50-b57e-b4b055940a07
-      speed: !<float> 100.000000
-      fallSpeed: !<float> 50.000000
-      fallY: !<float> -50.000000
+      speed: !<float> 50.000000
+      fallSpeed: !<float> 300.000000
       fallThreshold: 0.100000
   ScriptTypes:
     "":
@@ -1110,6 +1249,26 @@
   DepthFilter: true
   MeshVisuals:
     []
+- !<RenderMeshVisual/833aa6f6-e75e-48c5-9e13-5a9877c10c96>
+  PrefabRemaps:
+    []
+  Name: model
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 42a55a53-a367-4033-ad7a-a2fda8468e46
+  Mesh: !<reference> 4d552ba1-feb8-4dbb-a579-f1a509be3809
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<Canvas/871eb007-f049-4f4d-8010-d8435d6cbc93>
   PrefabRemaps:
     []
@@ -1479,6 +1638,25 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/a97b8ddb-038d-4099-b1d3-0c817830722d>
+  PrefabRemaps:
+    - 1c8716c7-4a23-4255-99db-11cb78f37601: b2f10425-61ed-4e91-60a5-8e58651c6e5d
+    - 43879f96-3eca-48c7-b44f-6b7b88934ba3: 217eeef5-1398-44b3-4eca-7b728ed2f78a
+    - 7872eaab-9d00-4dbc-8e2d-e602bf42998e: 9c814038-3558-429d-5e42-e3b9b1fe4c62
+    - 833aa6f6-e75e-48c5-9e13-5a9877c10c96: 4fdcb926-a316-4305-7493-f83bdafde425
+    - a97b8ddb-038d-4099-b1d3-0c817830722d: d60e7735-f913-46d8-6e5b-951fb1a070d6
+  Name: NPCmodel2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 246.942657, y: 90.689499, z: 8.591309}
+    Rotation: {x: 180.000000, y: -83.422127, z: 180.000000}
+    Scale: {x: 80.000000, y: 80.000000, z: 80.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 43879f96-3eca-48c7-b44f-6b7b88934ba3
+  Components:
+    - !<own> c61bb152-ef4f-4099-bd3a-7c8fa5debd5c
 - !<InteractionComponent/abc6392b-e69f-43fa-8b4b-33c1c4d01ef2>
   PrefabRemaps:
     []
@@ -1576,7 +1754,6 @@
     player: true
     speed: true
     fallSpeed: true
-    fallY: true
     fallThreshold: true
   ScriptTypesDefault:
     {}
@@ -1586,7 +1763,6 @@
       player: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       speed: !<float> 50.000000
       fallSpeed: !<float> 300.000000
-      fallY: !<float> -50.000000
       fallThreshold: 0.100000
   ScriptTypes:
     "":
@@ -1680,6 +1856,29 @@
   Enabled: true
   ScreenRegionType: SafeRender
   ResizeWithKeyboard: false
+- !<BodyComponent/bc9d8da1-3eea-4f0d-aad1-bb0735dafdad>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Sphere>
+    FitVisual: true
+    Radius: 6.000000
+  Matter: !<reference> 7a7324b7-d80b-41da-9d43-ed27296b37dd
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 108.000000
+  Damping: 0.410000
+  AngularDamping: 0.530000
 - !<SceneObject/beb7ccd9-77a2-4598-b425-8a1ac32f3171>
   PrefabRemaps:
     []
@@ -1713,6 +1912,41 @@
     - !<own> 681d7e97-a6d3-4775-8903-b70b04621eb3
   Components:
     - !<own> 71029d52-8a93-4b72-9aae-414b1076cae0
+- !<SceneObject/c3425233-a185-4fdc-930b-cc3d9266321b>
+  PrefabRemaps:
+    []
+  Name: NPCball2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 251.877472, y: 14.696823, z: -0.523956}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 100.000000, y: 100.000000, z: 100.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ed0ca932-c0fd-4e2b-8369-eed1cb5c2056
+    - !<own> bc9d8da1-3eea-4f0d-aad1-bb0735dafdad
+    - !<own> 7a898af9-d4e0-4261-9210-e4eb73325253
+- !<ScriptComponent/c61bb152-ef4f-4099-bd3a-7c8fa5debd5c>
+  PrefabRemaps:
+    []
+  Name: NpcRideBall
+  Enabled: true
+  ScriptAsset: !<reference> cd19a52d-45bc-4dc2-986d-d56bbc818375
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      sphere: !<reference.SceneObject> c3425233-a185-4fdc-930b-cc3d9266321b
+      player: !<reference.SceneObject> c19a8c5c-b7b3-4c50-b57e-b4b055940a07
+      yawOffsetDegrees: !<float> -60.000000
+  ScriptTypes:
+    "":
+      {}
 - !<ColliderComponent/c9b87bee-e948-4228-bc0d-2d91af839583>
   PrefabRemaps:
     []
@@ -1765,6 +1999,24 @@
     - !<own> 32a31d5d-e9d5-4027-8a32-4159388c3b4c
     - !<own> 604fe7cb-df2d-4e03-8f81-4410725ecd04
     - !<own> 014154ac-ce34-4600-b2b4-ee6613da2040
+- !<ScriptComponent/cf611c98-b3c1-449b-97d0-673e32dc817e>
+  PrefabRemaps:
+    []
+  Name: NpcRideBall
+  Enabled: true
+  ScriptAsset: !<reference> cd19a52d-45bc-4dc2-986d-d56bbc818375
+  ScriptInputsDefault:
+    yawOffsetDegrees: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      sphere: !<reference.SceneObject> 25da596f-99d6-4fc6-af5f-f7d60f1bef1c
+      player: !<reference.SceneObject> c19a8c5c-b7b3-4c50-b57e-b4b055940a07
+      yawOffsetDegrees: !<float> 0.000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/d5255cad-197e-44cb-9ea7-cf953cde00bf>
   PrefabRemaps:
     []
@@ -1804,6 +2056,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/da27d8b6-ce02-461a-a329-9848ed444928>
+  PrefabRemaps:
+    []
+  Name: NPC_Root
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 25da596f-99d6-4fc6-af5f-f7d60f1bef1c
+    - !<own> 2280d316-063a-4245-923f-c6f10cc5c0a2
+  Components:
+    []
 - !<SceneObject/dc482b72-9340-41e6-98a0-9b6c052622a9>
   PrefabRemaps:
     []
@@ -1959,6 +2227,26 @@
   Enabled: true
   ScreenRegionType: SafeRender
   ResizeWithKeyboard: false
+- !<RenderMeshVisual/ed0ca932-c0fd-4e2b-8369-eed1cb5c2056>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> f12b222a-3432-46e8-931d-5414f2e7a5b5
+  Mesh: !<reference> 6d1faf78-93ee-480c-b64e-185eb18b7e87
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<ScreenTransform/f15b0c36-658c-45ba-8f98-3e8393e465d5>
   PrefabRemaps:
     []

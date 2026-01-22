@@ -1,20 +1,20 @@
-- !<AssetImportMetadata/812fef60-ae28-415d-aa30-78cedd4f816b>
+- !<AssetImportMetadata/a6fbcbe2-e9e7-4c6f-bcfc-6ee1b264dc56>
   ImportedAssetIds:
-    JavaScriptAsset: !<reference> 52d87ee9-7c04-43e6-94e8-1050555f133d
+    JavaScriptAsset: !<reference> c7282ee1-2b12-443c-a3af-7d983dd7dc41
   ImporterName: JavaScriptAssetImporter
-  PrimaryAsset: !<reference> 52d87ee9-7c04-43e6-94e8-1050555f133d
+  PrimaryAsset: !<reference> c7282ee1-2b12-443c-a3af-7d983dd7dc41
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    JavaScriptAsset: !<own> 76cf64ff-1cf7-4553-97f6-437d08dc9605
+    JavaScriptAsset: !<own> 69623491-08c3-4a75-bab9-13a8c111460d
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ScriptAssetData/76cf64ff-1cf7-4553-97f6-437d08dc9605>
+- !<ScriptAssetData/69623491-08c3-4a75-bab9-13a8c111460d>
   SvgIcon: ""
   SetupScript:
     code: ""
@@ -22,15 +22,15 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 49c2cc91-8ef5-48dc-8547-f11c748b3610
+  ComponentUid: 824ec73d-312b-4dad-bd4a-124b75c065b0
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    fallSpeed: false
-    fallThreshold: false
-    player: false
-    speed: false
-    sphere: false
+    areaCenter: false
+    areaDepth: false
+    areaWidth: false
+    npcCount: false
+    npcTemplates: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -40,11 +40,12 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - sphere: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      player: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      speed: !<float> 50.000000
-      fallSpeed: !<float> 300.000000
-      fallThreshold: 0.100000
+    - npcTemplates: !<reference.SceneObject[]>
+        []
+      npcCount: 3
+      areaCenter: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      areaWidth: !<float> 400.000000
+      areaDepth: !<float> 400.000000
   ScriptTypes:
     -
       {}
