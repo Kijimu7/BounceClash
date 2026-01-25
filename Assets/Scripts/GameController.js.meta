@@ -28,11 +28,16 @@
   ScriptInputsHidden:
     MoveTowardsPlayer: false
     StartButton: false
+    autoStartTimer: false
     fallY: false
+    gameOverText: false
+    npcPoints: false
     npcs: false
     pointsPerFall: false
     score: false
     scoreText: false
+    timerDuration: false
+    timerText: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -47,10 +52,16 @@
       StartButton: !<reference.Text> 00000000-0000-0000-0000-000000000000
       npcs: !<reference.SceneObject[]>
         []
+      npcPoints: !<int[]>
+        []
       fallY: !<float> -10.000000
       score: 0
       pointsPerFall: 1
       scoreText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      timerDuration: !<float> 20.000000
+      autoStartTimer: true
+      timerText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      gameOverText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
