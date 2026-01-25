@@ -1,20 +1,20 @@
-- !<AssetImportMetadata/812fef60-ae28-415d-aa30-78cedd4f816b>
+- !<AssetImportMetadata/3d350ac0-2ee7-4a10-8483-07a4d4bcc5bf>
   ImportedAssetIds:
-    JavaScriptAsset: !<reference> 52d87ee9-7c04-43e6-94e8-1050555f133d
+    JavaScriptAsset: !<reference> 530224fc-0099-4935-817d-cd27c24d440d
   ImporterName: JavaScriptAssetImporter
-  PrimaryAsset: !<reference> 52d87ee9-7c04-43e6-94e8-1050555f133d
+  PrimaryAsset: !<reference> 530224fc-0099-4935-817d-cd27c24d440d
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    JavaScriptAsset: !<own> 76cf64ff-1cf7-4553-97f6-437d08dc9605
+    JavaScriptAsset: !<own> ad8ec8f2-2388-49af-8302-872ebedf93da
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ScriptAssetData/76cf64ff-1cf7-4553-97f6-437d08dc9605>
+- !<ScriptAssetData/ad8ec8f2-2388-49af-8302-872ebedf93da>
   SvgIcon: ""
   SetupScript:
     code: ""
@@ -22,15 +22,12 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 49c2cc91-8ef5-48dc-8547-f11c748b3610
+  ComponentUid: e5fdea07-2778-48a8-98a9-fd12b6323a0f
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    fallSpeed: false
-    fallThreshold: false
-    player: false
-    speed: false
-    sphere: false
+    gameController: false
+    interaction: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -40,11 +37,8 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - sphere: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      player: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      speed: !<float> 50.000000
-      fallSpeed: !<float> 300.000000
-      fallThreshold: 0.100000
+    - interaction: !<reference.InteractionComponent> 00000000-0000-0000-0000-000000000000
+      gameController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}

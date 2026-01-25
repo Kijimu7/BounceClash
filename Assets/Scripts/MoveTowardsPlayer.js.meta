@@ -1,0 +1,50 @@
+- !<AssetImportMetadata/ef1663fc-dc39-41e6-bbc2-bc56798209b6>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> c7410b57-1b93-42c4-8a1c-8f6bcfa1d430
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> c7410b57-1b93-42c4-8a1c-8f6bcfa1d430
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> 98118ff4-b817-4f60-be1e-183ca150efba
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/98118ff4-b817-4f60-be1e-183ca150efba>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: c590649b-b7cf-40b3-9345-aefffe394cc8
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    fallSpeed: false
+    fallThreshold: false
+    player: false
+    speed: false
+    sphere: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - sphere: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      player: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      speed: !<float> 50.000000
+      fallSpeed: !<float> 300.000000
+      fallThreshold: 0.100000
+  ScriptTypes:
+    -
+      {}

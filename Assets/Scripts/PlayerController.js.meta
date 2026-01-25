@@ -1,0 +1,66 @@
+- !<AssetImportMetadata/4f052456-d59b-44ed-99d9-07b4a4fd7ec8>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 7dd4e6f6-ac67-4691-b8e1-c30a359ecd4a
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 7dd4e6f6-ac67-4691-b8e1-c30a359ecd4a
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> 7b223e7a-b310-4fb8-a156-7ee0280fa4c6
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/7b223e7a-b310-4fb8-a156-7ee0280fa4c6>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: b236459d-47d2-4f7f-a5da-9d1e4e9dc0fb
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    fallStartZ: false
+    gapMaxX: false
+    gapMaxZ: false
+    gapMinX: false
+    gapMinZ: false
+    gravity: false
+    joystick: false
+    killY: false
+    moveSpeed: false
+    sphere: false
+    useGap: false
+    useKillY: false
+    useZTrigger: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - sphere: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      joystick: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      moveSpeed: !<float> 200.000000
+      gravity: !<float> -300.000000
+      useZTrigger: true
+      fallStartZ: !<float> 150.000000
+      useGap: true
+      gapMinX: !<float> -50.000000
+      gapMaxX: !<float> 50.000000
+      gapMinZ: !<float> 100.000000
+      gapMaxZ: !<float> 200.000000
+      useKillY: false
+      killY: !<float> -500.000000
+  ScriptTypes:
+    -
+      {}
