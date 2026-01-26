@@ -28,6 +28,7 @@
   ScriptInputsHidden:
     gameController: false
     turnBased: false
+    turnEndScene: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -39,6 +40,7 @@
   DefaultScriptInputs:
     - turnBased: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       gameController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      turnEndScene: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}

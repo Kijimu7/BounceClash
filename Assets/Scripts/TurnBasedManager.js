@@ -5,6 +5,11 @@
 // Your existing GameController ScriptComponent (on the "GameController" Scene Object)
 //@input Component.ScriptComponent gameController
 
+// @input SceneObject turnEndScene
+
+script.turnEndScene.enabled = false;
+
+
 var TURN_DURATION = 10.0;
 
 // Called by the Turn Based component when a new turn starts
@@ -103,6 +108,13 @@ function onLocalRoundFinished(_) {
 }
 script.onLocalRoundFinished = onLocalRoundFinished;
 
+function showTurnEndScene() {
+    if (script.turnEndScene) {
+        script.turnEndScene.enabled = true;
+    }
+}
+script.showTurnEndScene = showTurnEndScene;
+
 // Debug: log when a turn ends (per-player turn, not whole game)
 function onTurnEndDebug() {
     if (!script.turnBased) {
@@ -117,6 +129,13 @@ function onTurnEndDebug() {
                 score = script.turnBased.getScore();
             }
             print("[TurnBased] TurnEnd: turnCount=" + turnCount + ", score=" + score);
+                // Show turn-end UI
+            // if (script.turnEndScene) {
+            //     script.turnEndScene.enabled = true;
+            // }
+
+
+
         }).catch(function(e) {
             print("[TurnBased] TurnEnd debug error in getTurnCount: " + e);
         });
