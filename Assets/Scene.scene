@@ -1,6 +1,7 @@
 - !<Scene/0a1ccb1a-fe88-4fbb-9883-e3af3c75fd99>
   PackagePath: ""
   objects:
+    - !<own> 7408d9f3-bbe6-4ea3-9643-937cf1e4d96e
     - !<own> 00000000-0000-0065-0000-000000000064
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> ce9a5fc6-513b-41c3-b5d5-4d0de3c74861
@@ -32,7 +33,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 40.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.990000, y: 1.990001, z: 1.990001}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1075,9 +1076,9 @@
     right: 0.900000
     top: 0.700000
   Offset:
-    left: -0.000008
+    left: 0.000000
     bottom: 0.000000
-    right: 0.000008
+    right: 0.000000
     top: 0.000000
 - !<RenderMeshVisual/52c8eaa9-6554-4217-a774-2b57532da30d>
   PrefabRemaps:
@@ -1346,6 +1347,26 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<RenderMeshVisual/5d4bf53b-caef-48a0-affd-46a89eeae338>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 07bdf36b-3da0-4b31-a835-412d36a7b1e2
+  Mesh: !<reference> 6d1faf78-93ee-480c-b64e-185eb18b7e87
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/5d843b38-14cd-40f0-ae51-68f92741c2b3>
   PrefabRemaps:
     []
@@ -1564,7 +1585,6 @@
     gravity: true
     airControl: true
     showCollider: true
-    groundIsZero: true
     groundCheckDistance: true
     stepHeight: true
     colliderHeight: true
@@ -1614,7 +1634,7 @@
       gravity: !<float> -980.000000
       airControl: 0.500000
       showCollider: false
-      groundIsZero: true
+      groundIsZero: false
       groundCheckDistance: !<float> 1000.000000
       stepHeight: !<float> 25.000000
       colliderHeight: !<float> 75.000000
@@ -1725,6 +1745,21 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/7408d9f3-bbe6-4ea3-9643-937cf1e4d96e>
+  PrefabRemaps:
+    []
+  Name: Skybox
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 564.804993, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 2000.000000, y: 2000.000000, z: 2000.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 5d4bf53b-caef-48a0-affd-46a89eeae338
 - !<Text/752eacc1-e39f-435b-97a6-36ace579a84c>
   PrefabRemaps:
     []
@@ -2572,12 +2607,12 @@
   RotationTension: 30.000000
   ForceCompound: false
   Intangible: false
-  ShowCollider: false
+  ShowCollider: true
   Dynamic: false
-  BodySetting: Density
-  BodySettingValue: 35.900000
-  Damping: 0.350000
-  AngularDamping: 0.380000
+  BodySetting: Mass
+  BodySettingValue: 800.000000
+  Damping: 1.000000
+  AngularDamping: 1.000000
 - !<ScriptComponent/b51824a2-dd8d-4656-b58c-75e974705d9a>
   PrefabRemaps:
     []
@@ -2587,6 +2622,7 @@
   ScriptInputsDefault:
     score: true
     pointsPerFall: true
+    playerFallY: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -2612,6 +2648,9 @@
       GameOverScene: !<reference.SceneObject> e6964885-ce6a-4e03-8ce9-e78590a580ae
       turnBasedManager: !<reference.ScriptComponent> 3723f9c9-0f3b-4e2b-97d0-3f55f9a6d2d4
       userScore: !<reference.Text> 8b200721-28a9-4c2c-8fed-13ef59631665
+      endOnPlayerFall: true
+      player: !<reference.SceneObject> 681d7e97-a6d3-4775-8903-b70b04621eb3
+      playerFallY: !<float> -10.000000
   ScriptTypes:
     "":
       {}
@@ -2802,7 +2841,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 100.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 70.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -2811,6 +2850,7 @@
     - !<own> 681d7e97-a6d3-4775-8903-b70b04621eb3
   Components:
     - !<own> 71029d52-8a93-4b72-9aae-414b1076cae0
+    - !<own> d3cce9ef-6e1c-409f-991c-f4b78dd558a1
 - !<SceneObject/c3425233-a185-4fdc-930b-cc3d9266321b>
   PrefabRemaps:
     []
@@ -3055,6 +3095,27 @@
   ScriptTypes:
     "":
       {}
+- !<ScriptComponent/d3cce9ef-6e1c-409f-991c-f4b78dd558a1>
+  PrefabRemaps:
+    []
+  Name: SimplePlayerFall
+  Enabled: true
+  ScriptAsset: !<reference> 19415c27-7045-4955-ac9c-c6bd9f8965e1
+  ScriptInputsDefault:
+    enableFalling: true
+    debugLogs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      characterController: !<reference.ScriptComponent> 71029d52-8a93-4b72-9aae-414b1076cae0
+      playerBall: !<reference.SceneObject> 681d7e97-a6d3-4775-8903-b70b04621eb3
+      platform: !<reference.SceneObject> ce9a5fc6-513b-41c3-b5d5-4d0de3c74861
+      enableFalling: true
+      debugLogs: false
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/d5255cad-197e-44cb-9ea7-cf953cde00bf>
   PrefabRemaps:
     []
@@ -3062,16 +3123,12 @@
   Enabled: true
   ScriptAsset: !<reference> 61ccdc14-fcee-4b95-8b9d-96254c7a69a5
   ScriptInputsDefault:
-    fallSpeed: true
-    fallThreshold: true
     manualRadius: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       sphere: !<reference.SceneObject> 681d7e97-a6d3-4775-8903-b70b04621eb3
-      fallSpeed: !<float> 300.000000
-      fallThreshold: 0.100000
       useScaleForRadius: false
       manualRadius: !<float> 50.000000
   ScriptTypes:

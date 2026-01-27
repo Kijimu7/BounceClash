@@ -50,21 +50,34 @@
 // Optional: Text component to show "Game Over" when time runs out
 // @input Component.Text gameOverText {"label":"Game Over Text", "hint":"Optional"}
 
-//@input SceneObject GameOverScene;
+// Optional: full-screen game over visual (e.g. Gaussian Blur)
+//@input SceneObject GameOverScene
 
 // Turn Based Manager script (on the TurnBasedManager Scene Object)
 //@input Component.ScriptComponent turnBasedManager
 
+// Text used on the turn-end / round-end UI to show the local player's score
 //@input Component.Text userScore
 
+// ---------- PLAYER FALL END CONDITION ----------
+
+// If true, the round will also end when the player falls below a Y-threshold
+// @input bool endOnPlayerFall = false {"label":"End Round When Player Falls"}
+
+// Player object to watch (e.g. Bitmoji Player)
+// @input SceneObject player {"label":"Player To Watch", "hint":"Optional – used only if End Round When Player Falls is enabled"}
+
+// Y position at which we consider the player has "fallen" off the play area
+// @input float playerFallY = -10.0 {"label":"Player Fall Threshold Y"}
 
 // ---------- INTERNAL STATE ----------
-
-
 
 var currentScore = script.score;
 // hasFallen[i] tracks if npcs[i] is currently considered "fallen"
 var hasFallen = [];
+
+// Track whether we've already ended the round because the player fell
+var playerHasTriggeredFall = false;
 
 // Timer state
 var timeRemaining = 0.0;
@@ -74,6 +87,9 @@ var isGameOver = false;
 // ---------- GAME START BUTTON ----------
 
 function startGame() {
+    // Reset player fall flag at the start of a round
+    playerHasTriggeredFall = false;
+
     // Enable MoveTowardsPlayer scripts
     if (script.MoveTowardsPlayer) {
         for (var i = 0; i < script.MoveTowardsPlayer.length; i++) {
@@ -156,9 +172,19 @@ function onUpdate(eventData) {
         updateTimerText();
     }
 
-    // After game over, no more scoring
+    // After game over, no more scoring or checks
     if (isGameOver) {
         return;
+    }
+
+    // --- Player fall -> end round (optional) ---
+    if (script.endOnPlayerFall && script.player && !playerHasTriggeredFall) {
+        var playerY = script.player.getTransform().getWorldPosition().y;
+        if (playerY < script.playerFallY) {
+            playerHasTriggeredFall = true;
+            onGameOver();
+            return;
+        }
     }
 
     // --- NPC fall scoring ---
@@ -229,6 +255,9 @@ function startTimer(seconds) {
     if (script.gameOverText) {
         script.gameOverText.text = "";
     }
+
+    // Reset player fall flag whenever we explicitly restart the timer
+    playerHasTriggeredFall = false;
 }
 
 function resetTimer() {
@@ -240,6 +269,8 @@ function resetTimer() {
     if (script.gameOverText) {
         script.gameOverText.text = "";
     }
+
+    playerHasTriggeredFall = false;
 }
 
 function updateTimerText() {
@@ -272,17 +303,20 @@ function onGameOver() {
         print("[Game] Game Over");
     }
 
-    script.GameOverScene.enabled = true;
+    if (script.GameOverScene) {
+        script.GameOverScene.enabled = true;
+    }
 
-        // NEW: show the TurnEndScene when timer hits 0
+    // Show the TurnEndScene when the round ends
     if (script.turnBasedManager && script.turnBasedManager.showTurnEndScene) {
         script.turnBasedManager.showTurnEndScene();
     }
 
-    script.userScore.text = "YOUR SCORE: " + currentScore.toString();
-   
+    if (script.userScore) {
+        script.userScore.text = "YOUR SCORE: " + currentScore.toString();
+    }
+
     if (script.turnBasedManager &&
-        script.turnBasedManager &&
         script.turnBasedManager.onLocalRoundFinished) {
         script.turnBasedManager.onLocalRoundFinished(currentScore);
     }
