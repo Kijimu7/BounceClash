@@ -40,12 +40,11 @@
         CompressorName: None
         CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
       Performance Compression: !<SingleCompressionSettings>
-        CompressorName: Performance
-        CompressionSettings: !<TextureCompressionSettings>
-          Level: Medium
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
     ExtensionMappings:
       mesh: None Compression
-      jpeg: Performance Compression
+      jpeg: None Compression
     Overrides:
       {}
 - !<RenderMeshVisual/7ee351a3-b460-40b4-6035-6db7be900930>

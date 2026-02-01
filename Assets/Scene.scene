@@ -3,7 +3,6 @@
   objects:
     - !<own> 00000000-0000-0065-0000-000000000064
     - !<own> 0005641c-028d-459a-0000-000000014b4d
-    - !<own> ce9a5fc6-513b-41c3-b5d5-4d0de3c74861
     - !<own> fd03b193-9d37-4e4d-81e6-2240b2be33ab
     - !<own> 248f2493-6f3f-41b2-9a93-968af80d9fca
     - !<own> 2ab8f963-4fd2-4ea9-8c45-66faa3faf908
@@ -12,11 +11,9 @@
     - !<own> 0ba1053c-10b9-46e9-b071-21ad3b69bf36
     - !<own> 59121da2-cd16-49e3-af19-13693289dfa1
     - !<own> ecfe01d5-5e6f-4b5f-a0bb-0979d887ca99
-    - !<own> 3515a3b2-ccde-4660-80ff-cf81013aad84
     - !<own> afe4b697-2c90-472d-b8c4-923fc26e0b75
-    - !<own> 621a7119-5862-4eea-8087-47855d9214f7
     - !<own> 545c62d7-4d34-4c43-9007-019f4d414be1
-    - !<own> a6c7fdcb-4db8-4f23-a950-134d261f36e5
+    - !<own> ca391339-843c-406a-a4bd-fda109ebe673
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -222,13 +219,6 @@
   Components:
     - !<own> 5d03e450-9574-4c3e-a533-4a803afc1888
     - !<own> 8296ac26-113a-49cf-a91c-0da49745c18d
-- !<WorldComponent/014154ac-ce34-4600-b2b4-ee6613da2040>
-  PrefabRemaps:
-    []
-  Name: Physics World
-  Enabled: true
-  UpdateOrder: 0
-  Settings: !<reference> 25a0dda3-adc2-4072-84d1-1d2d0d66f9f2
 - !<PostEffectVisual/0469a944-dd83-4f51-a0b7-4fd2bdab2eec>
   PrefabRemaps:
     []
@@ -962,26 +952,6 @@
   BodySettingValue: 108.000000
   Damping: 0.410000
   AngularDamping: 0.530000
-- !<RenderMeshVisual/32a31d5d-e9d5-4027-8a32-4159388c3b4c>
-  PrefabRemaps:
-    []
-  Name: Render Mesh Visual
-  Enabled: false
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> 977e93cd-547d-4057-94d6-6be6a17fc659
-  Mesh: !<reference> 33c65e09-576b-4e47-853e-ec9b82b9a86f
-  Skin: !<reference> 00000000-0000-0000-0000-000000000000
-  BlendShapesEnabled: true
-  BlendNormals: false
-  BlendShapes:
-    {}
 - !<ScriptComponent/351599f8-f54e-422c-ba17-4a0d5b9e3699>
   PrefabRemaps:
     []
@@ -1768,24 +1738,6 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
-- !<ColliderComponent/604fe7cb-df2d-4e03-8f81-4410725ecd04>
-  PrefabRemaps:
-    []
-  Name: Physics Collider
-  Enabled: true
-  Shape: !<Box>
-    FitVisual: true
-    Size: {x: 15.000000, y: 15.000000, z: 15.000000}
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
 - !<SceneObject/621a7119-5862-4eea-8087-47855d9214f7>
   PrefabRemaps:
     []
@@ -1793,9 +1745,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -17.761169, y: 3.000000, z: -210.773438}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 800.000000, y: 10.000000, z: 800.000000}
+    Position: {x: -0.017761, y: -0.010774, z: -0.213703}
+    Rotation: {x: -90.000031, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.800000, y: 0.010000, z: 0.800000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1882,7 +1834,6 @@
     gravity: true
     airControl: true
     showCollider: true
-    groundIsZero: true
     groundCheckDistance: true
     stepHeight: true
     colliderHeight: true
@@ -1932,7 +1883,7 @@
       gravity: !<float> -980.000000
       airControl: 0.500000
       showCollider: false
-      groundIsZero: true
+      groundIsZero: false
       groundCheckDistance: !<float> 1000.000000
       stepHeight: !<float> 25.000000
       colliderHeight: !<float> 75.000000
@@ -2783,7 +2734,7 @@
     Scale: {x: 1000.000000, y: 1000.000000, z: 1000.000000}
     HasSegmentScaleCompensation: false
   Children:
-    []
+    - !<own> 621a7119-5862-4eea-8087-47855d9214f7
   Components:
     - !<own> 1dfc0cf7-36e3-471c-bfb7-9961448de776
 - !<Text/b002aeda-6e99-476d-bb73-ce0ed5697e92>
@@ -3311,6 +3262,22 @@
   Enabled: true
   ScreenRegionType: FullFrame
   ResizeWithKeyboard: false
+- !<SceneObject/ca391339-843c-406a-a4bd-fda109ebe673>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 3515a3b2-ccde-4660-80ff-cf81013aad84
+    - !<own> a6c7fdcb-4db8-4f23-a950-134d261f36e5
+  Components:
+    []
 - !<ScreenTransform/ccdd7cdd-bb56-4d63-b291-df973949b432>
   PrefabRemaps:
     []
@@ -3444,23 +3411,6 @@
     - !<own> f15b0c36-658c-45ba-8f98-3e8393e465d5
     - !<own> e48ad392-562c-4d92-baf2-da351d7411de
     - !<own> b73c4182-6ed8-4df2-ab43-4b0c04fcbbde
-- !<SceneObject/ce9a5fc6-513b-41c3-b5d5-4d0de3c74861>
-  PrefabRemaps:
-    []
-  Name: "Ground Plane [DELETE_ME]"
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: -43.997959, y: 3.996838, z: -216.682007}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 700.000000, y: 999.999939, z: 700.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 32a31d5d-e9d5-4027-8a32-4159388c3b4c
-    - !<own> 604fe7cb-df2d-4e03-8f81-4410725ecd04
-    - !<own> 014154ac-ce34-4600-b2b4-ee6613da2040
 - !<SceneObject/ceaa4c51-bcdb-4aa5-a012-5b80189f7d14>
   PrefabRemaps:
     []
