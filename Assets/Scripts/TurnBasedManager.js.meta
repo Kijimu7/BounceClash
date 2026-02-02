@@ -30,7 +30,14 @@
     gameEndScene: false
     p1ScoreText: false
     p2ScoreText: false
+    player1LoseImage: false
+    player1WinImage: false
+    player2LoseImage: false
+    player2WinImage: false
     properGameOverManager: false
+    soundPlayer: false
+    tieImage1: false
+    tieImage2: false
     turnBased: false
     turnEndScene: false
     winnerText: false
@@ -47,10 +54,17 @@
       p1ScoreText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       p2ScoreText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       winnerText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      player1WinImage: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      player1LoseImage: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      player2WinImage: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      player2LoseImage: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      tieImage1: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      tieImage2: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       turnBased: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       gameController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       turnEndScene: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       properGameOverManager: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      soundPlayer: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}

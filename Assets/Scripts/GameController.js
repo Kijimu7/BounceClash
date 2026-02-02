@@ -10,7 +10,7 @@
 //@input Component.ScriptComponent[] MoveTowardsPlayer
 
 // Start button text (we'll hide/disable it when the game starts)
-//@input Component.Text StartButton
+
 
 // ---------- NPC / SCORE SETUP ----------
 
@@ -58,6 +58,21 @@
 
 // Text used on the turn-end / round-end UI to show the local player's score
 //@input Component.Text userScore
+//@input Component.Text startButton
+
+// @input Component.ScriptComponent soundPlayer
+
+
+// ---------- PLAYER FALL END CONDITION ----------
+
+// If true, the round will also end when the player falls below a Y-threshold
+// @input bool endOnPlayerFall = false {"label":"End Round When Player Falls"}
+
+// Player object to watch (e.g. Bitmoji Player)
+// @input SceneObject player {"label":"Player To Watch", "hint":"Optional – used only if End Round When Player Falls is enabled"}
+
+// Y position at which we consider the player has "fallen" off the play area
+// @input float playerFallY = -10.0 {"label":"Player Fall Threshold Y"}
 
 // ---------- PLAYER FALL END CONDITION ----------
 
@@ -84,10 +99,27 @@ var timeRemaining = 0.0;
 var timerRunning = false;
 var isGameOver = false;
 
+// Track whether we've already ended the round because the player fell
+var playerHasTriggeredFall = false;
+
 // ---------- GAME START BUTTON ----------
 
+// Runs once when the lens starts
+var onStart = script.createEvent("OnStartEvent");
+onStart.bind(function () {
+    // 1) Show START button, hide game UI if needed
+    if (script.startButton) {
+        script.startButton.enabled = true;
+    }
+    
+     script.timerText.getSceneObject().enabled = false;
+     script.scoreText.getSceneObject().enabled = false;
+});
+
+
+
 function startGame() {
-    // Reset player fall flag at the start of a round
+     // Reset player fall flag at the start of a round
     playerHasTriggeredFall = false;
 
     // Enable MoveTowardsPlayer scripts
@@ -100,11 +132,14 @@ function startGame() {
             sc.enabled = true;
         }
     }
+     script.timerText.getSceneObject().enabled = true;
+     script.scoreText.getSceneObject().enabled = true;
+     script.soundPlayer.api.playByIndex(1);
 
     // Disable / hide the start button when game begins
-    if (script.StartButton) {
-        script.StartButton.enabled = false;
-    }
+    // if (script.startButton) {
+    //     script.startButton.enabled = false;
+    // }
 
     // Start the countdown timer
     startTimer(); // uses current timerDuration
@@ -125,6 +160,9 @@ function init() {
     // Init timer
     timeRemaining = script.timerDuration;
     updateTimerText();
+
+     // Init Start Button
+    script.startButton.text = "START"; 
 
     // Init score display
     updateScoreText();
@@ -220,6 +258,8 @@ function onUpdate(eventData) {
     }
 }
 
+
+
 // ---------- SCORE HELPERS ----------
 
 function addPoints(amount) {
@@ -256,7 +296,7 @@ function startTimer(seconds) {
         script.gameOverText.text = "";
     }
 
-    // Reset player fall flag whenever we explicitly restart the timer
+     // Reset player fall flag whenever we explicitly restart the timer
     playerHasTriggeredFall = false;
 }
 
@@ -281,6 +321,8 @@ function updateTimerText() {
         }
         script.timerText.text = "Timer: " + secondsLeft.toString();
     }
+
+    playerHasTriggeredFall = false;
 }
 
 function onGameOver() {

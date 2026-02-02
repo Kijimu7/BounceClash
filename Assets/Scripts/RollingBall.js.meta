@@ -26,9 +26,9 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    manualRadius: false
+    fallSpeed: false
+    fallThreshold: false
     sphere: false
-    useScaleForRadius: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -39,8 +39,8 @@
     []
   DefaultScriptInputs:
     - sphere: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      useScaleForRadius: true
-      manualRadius: !<float> 50.000000
+      fallSpeed: !<float> 300.000000
+      fallThreshold: 0.100000
   ScriptTypes:
     -
       {}

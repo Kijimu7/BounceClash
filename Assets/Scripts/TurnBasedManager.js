@@ -3,6 +3,18 @@
 // @input Component.Text p2ScoreText
 // @input Component.Text winnerText
 
+// Winner / loser / tie images for final game end screen
+// player 1 win image (e.g. "playerend1-win")
+// @input SceneObject player1WinImage
+// player 1 lose image (e.g. "playerend1-lose")
+// @input SceneObject player1LoseImage
+// player 2 win image (e.g. "playerend2-win")
+// @input SceneObject player2WinImage
+// player 2 lose image (e.g. "playerend2-lose")
+// @input SceneObject player2LoseImage
+// tie images for both players (or global tie UI)
+// @input SceneObject tieImage1
+// @input SceneObject tieImage2
 
 // Turn Based custom component instance (on the "Turn Based" Scene Object)
 //@input Component.ScriptComponent turnBased
@@ -14,9 +26,9 @@
 
 // Reference to the ProperGameOverManager (for final game over screen)
 //@input Component.ScriptComponent properGameOverManager
+// @input Component.ScriptComponent soundPlayer
 
 script.turnEndScene.enabled = false;
-
 
 var TURN_DURATION = 10.0;
 
@@ -53,7 +65,7 @@ function startRound() {
         script.gameController.startGame();
     }
 }
-script.startRound = startRound;
+script.api.startRound = startRound;
 
 // Called by GameController when its local 10s round is finished
 // function onLocalRoundFinished(score) {
@@ -119,6 +131,8 @@ script.onLocalRoundFinished = onLocalRoundFinished;
 function showTurnEndScene() {
     if (script.turnEndScene) {
         script.turnEndScene.enabled = true;
+
+        script.soundPlayer.api.stopByIndex(1);
     }
 }
 script.showTurnEndScene = showTurnEndScene;
@@ -141,9 +155,6 @@ function onTurnEndDebug() {
             // if (script.turnEndScene) {
             //     script.turnEndScene.enabled = true;
             // }
-
-
-
         }).catch(function (e) {
             print("[TurnBased] TurnEnd debug error in getTurnCount: " + e);
         });
@@ -151,6 +162,53 @@ function onTurnEndDebug() {
         print("[TurnBased] TurnEnd debug: getTurnCount() not available");
     }
 }
+
+// Helper to enable the correct end-game images based on final scores
+function updateWinnerImages(p0, p1) {
+    // First, disable all images if they exist
+    var allImages = [
+        script.player1WinImage,
+        script.player1LoseImage,
+        script.player2WinImage,
+        script.player2LoseImage,
+        script.tieImage1,
+        script.tieImage2
+    ];
+
+    for (var i = 0; i < allImages.length; i++) {
+        if (allImages[i]) {
+            allImages[i].enabled = false;
+        }
+    }
+
+    // Decide which ones to enable
+    if (p0 > p1) {
+        // Player 1 is the winner
+        if (script.player1WinImage) {
+            script.player1WinImage.enabled = true;
+        }
+        if (script.player2LoseImage) {
+            script.player2LoseImage.enabled = true;
+        }
+    } else if (p1 > p0) {
+        // Player 2 is the winner
+        if (script.player2WinImage) {
+            script.player2WinImage.enabled = true;
+        }
+        if (script.player1LoseImage) {
+            script.player1LoseImage.enabled = true;
+        }
+    } else {
+        // Tie
+        if (script.tieImage1) {
+            script.tieImage1.enabled = true;
+        }
+        if (script.tieImage2) {
+            script.tieImage2.enabled = true;
+        }
+    }
+}
+
 // Called when the entire game is over (all turns completed)
 // This will show the final game over screen with both players' total scores and winner
 function onGameOverDebug() {
@@ -219,6 +277,9 @@ function onGameOverDebug() {
                     script.winnerText.text = "It's a tie!";
                 }
             }
+
+            // Enable the correct winner/loser/tie images
+            updateWinnerImages(p0, p1);
 
             // Hide per-turn screen and show final game over screen
             if (script.turnEndScene) {

@@ -1,13 +1,13 @@
-// RollingBall.js
-// Attach this to the sphere. It only rotates the ball based on movement.
+// Event: Update
 
-// @input SceneObject sphere
-// @input bool useScaleForRadius = true
-// @input float manualRadius = 50.0 {"showIf":"useScaleForRadius","showIfValue":false}
+//@input SceneObject sphere
+//@input float fallSpeed = 300.0      // how fast it falls
+//@input float fallThreshold = 0.1    // how far below ground before it starts falling
 
-// If no sphere is assigned, use the object this script is on
-var target = script.sphere || script.getSceneObject();
-var sphereTransform = target.getTransform();
+var sphereTransform = script.sphere.getTransform();
+
+// Treat the starting Y as "ground" height
+var groundY = sphereTransform.getWorldPosition().y;
 
 // Remember last frame's position to compute movement
 var prevPos = sphereTransform.getWorldPosition();
@@ -45,6 +45,11 @@ function onUpdate() {
         sphereTransform.setWorldRotation(deltaRot.multiply(currentRot));
     }
 
-    // 4. Store for next frame
-    prevPos = pos;
-}
+    // Keep sphere locked to ground height while not falling
+    pos.y = groundY;
+    sphereTransform.setWorldPosition(pos);
+
+    // Store for next frame
+    prevPos = sphereTransform.getWorldPosition();
+});
+

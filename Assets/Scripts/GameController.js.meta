@@ -28,7 +28,6 @@
   ScriptInputsHidden:
     GameOverScene: false
     MoveTowardsPlayer: false
-    StartButton: false
     autoStartTimer: false
     endOnPlayerFall: false
     fallY: false
@@ -40,6 +39,8 @@
     pointsPerFall: false
     score: false
     scoreText: false
+    soundPlayer: false
+    startButton: false
     timerDuration: false
     timerText: false
     turnBasedManager: false
@@ -55,7 +56,6 @@
   DefaultScriptInputs:
     - MoveTowardsPlayer: !<reference.ScriptComponent[]>
         []
-      StartButton: !<reference.Text> 00000000-0000-0000-0000-000000000000
       npcs: !<reference.SceneObject[]>
         []
       npcPoints: !<int[]>
@@ -71,6 +71,8 @@
       GameOverScene: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       turnBasedManager: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       userScore: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      startButton: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      soundPlayer: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       endOnPlayerFall: false
       player: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       playerFallY: !<float> -10.000000
